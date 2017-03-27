@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+<div class="jumbotron">
+<div class="container-fluid text-center">
+	<h4>What is meant by CVP analysis?</h4>
+	<p>CVP analysis is a tool used by businesses to calculate the changes that would occur, if there<br> were changes to the variable cost,fixed cost,price of the product (can also be a combination of all).</p>
+	<p>To perform CVP analysis we need some basic information.</p><br>
+</div>
+</div>
+<form name="myform" action="http://www.cs.mun.ca/~sa7437/website/index.php" method="POST" >
+
+<h3>Please enter the following information for further processing:</h3><br>
+<div class="form-group">
+<label class="control-label col-sm-2" for="fixedcost">Total of Fixed cost:</label>
+<div class="col-sm-10">
+<input type="text" name="fixedcost" ><br>
+(Hint:These don't change with changes in volume)
+</div>
+
+</div>
+<div class="form-group">
+
+<label class="control-label col-sm-2" for="variablecost">
+Variable cost per unit:</label>
+<div class="col-sm-10">
+<input type="text" name="variablecost"><br><br>
+(Hint:These change with changes in volume)
+</div>
+</div>
+<div class="form-group">
+
+<div class="form-group">
+
+<label class="control-label col-sm-2" for="price">
+Price you are charging per unit :</label>
+<div class="col-sm-10">
+<input type="text" name="sellingprice"><br><br>
+</div>
+</div>
+
+
+<label class="control-label col-sm-2" for="profit">
+How much would you like to earn as profit ?</label><br>
+<div class="col-sm-10">
+<input type="text" name="profitstoearn"><br><br>
+(Hint:At Breakeven profits are zero)
+</div>
+</div>
+
+<div class="form-group">
+<label class="control-label col-sm-2 " for="calc">
+What would you like to calculate?</label>
+<div class="col-sm-10">
+<select name="choice1">
+	
+	<option value="qtat0">BEP qty at 0 profit</option>
+	<option value="qtatp">BEP qty at certain profit</option>
+
+
+</select>
+</div>
+</div>
+
+
+
+
+<div class="form-group">
+<div class="col-sm-12">
+<input type="submit" name="submit" value="Submit" >
+</div>
+</div>
+</form>
+
+
+</body>
+</html>
