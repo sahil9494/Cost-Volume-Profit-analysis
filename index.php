@@ -20,27 +20,51 @@ session_start();
 	<?php
 
 	$fix=$_POST["fixedcost"];
+	$_SESSION["fix"]=$fix;
+
 	
 
 	$variablec=$_POST["variablecost"];
-
+	$_SESSION["variablec"]=$variablec;
 
 
 	$price=$_POST["sellingprice"];
+	$_SESSION["price"]=$price;
+
+
 
 	$opincome=$_POST["profitstoearn"];
+	$_SESSION["opincome"]=$opincome;
+
+
 
 	$bepat0=(($fix)/($price-$variablec));
+	$_SESSION["bepat0"]=$bepat0;
+
+
+
 
 	$bepatlevel=(($fix+$opincome)/($price-$variablec));
+	$_SESSION["bepatlevel"]=$bepatlevel;
+
 
 
 	$selctedvalue=$_POST["choice1"];
+	$_SESSION["selectedvalue"]=$selctedvalue;
+	
 
 	$salesvalueat0=$bepat0*$price;
+	$_SESSION["salesvalueat0"]=$salesvalueat0;
+
 
 	$salesvalueatp=$bepatlevel*$price;
+	$_SESSION["salesvalueatp"]=$salesvalueatp;
+
+
+
 	$cmratio=(($price-$variablec)/($price));
+	$_SESSION["cmratio"]=$cmratio;
+
 
 
 	if($selctedvalue=="qtat0"){
@@ -67,11 +91,36 @@ session_start();
 	?>
 
 	<h4>Are you wondering, if you experienced changes in some of the elements such as profits,variable cost, fixed cost etc., how would that effect your needs to produce breakeven quantity?</h4>
-	<p>If you wish to try these changes go ahead, press the button</p><br><br>
-	<input type="button" name="changes" id="changes" value="Calculate after changes"><br>
+	<p>If you wish to try these changes go ahead, please choose what scenario occured:</p>
+	<br><br>
+
+	<form name="f2" action="cvp3.php" method="POST">
+
+	<select name="choice2">
+	
+	<option value="priceinc">Price increased</option>
+	<option value="pricedec">Price decreased</option>
+	<option value="fixedinc">Fixed cost increased</option>
+	<option value="fixeddec">Fixed cost decreased</option>
+	<option value="variableinc">Variable cost increased</option>
+	<option value="variabledec">Variable cost decreased</option>
 
 
+	</select>
 
+	<br><br>
+	How much did it change by?
+	<input type="text" name="textfield1">
+
+	<br><br><br>
+
+	Curious to know how did it change your breakeven values? GO ahead, press the button to calculate that.
+	
+
+
+	<input type="submit" name="submit" id="changes" value="Calculate after changes"><br>
+	
+	</form>
 
 </body>
 </html>
